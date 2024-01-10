@@ -1,0 +1,218 @@
+.table-order-title tr th {
+    padding: 10px 0px;
+}
+
+.sTable tbody th {
+    /* border-left: 1px solid #f1f1f1!important; */
+    padding: 6px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.withCheck thead tr th:first-child, .withCheck thead tr th:first-child {
+    padding: 11px 10px;
+}
+
+@media only screen and (max-width: 1980px) {
+    .responsive-table {
+        overflow-x: scroll;
+        max-width: 1254px;
+    }
+}
+
+#leftSide {
+    width: 220px;
+}
+
+@media only screen and (min-width: 1100px) {
+    #rightSide {
+        padding-left: 292px;
+    }
+}
+
+.toggle-table {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    border: unset;
+    height: 20px;
+    background-color: unset;
+}
+
+/* Hide the checkbox input */
+.toggle-table input {
+    display: none;
+}
+
+/* Describe slider's look and position. */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-radius: 34px;
+    border-width: 2px;
+    border-style: solid;
+    transition: .4s;
+}
+
+/* Describe the white ball's location
+      and appearance in the slider. */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    top: 1.5px;
+    bottom: 4px;
+    background-color: grey;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Modify the slider's background color to
+      green once the checkbox has been selected. */
+input:checked+.slider {
+    border-color: red;
+}
+input:checked+.slider:before {
+    background-color: red;
+}
+
+/* When the checkbox is checked, shift the
+      white ball towards the right within the slider. */
+input:checked+.slider:before {
+    transform: translateX(19px);
+}
+
+#rightSide .wrapper {
+    background-color: #fff;
+    height: 100%;
+}
+
+.responsive-table thead tr {
+    background-color:#919191 !important;
+    color: white;
+}
+
+ul.sub li a {
+    background: unset;
+    margin-left: 20px;
+}
+
+ul.sub li a:hover {
+    background: unset;
+}
+
+#leftSide .nav li a.exp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav li.categories_li a span.arrow-up {
+    background-image: url('../icons/arrow_up.png');
+}
+
+.responsive-table {
+    overflow-y: unset !important;
+}
+
+.nav li.order a span {
+    background-image: url('../icons/quản\ lý\ đơn\ hàng.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.financial a span {
+    background-image: url('../icons/quản\ lý\ tài\ chính.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.product a span {
+    background-image: url('../icons/quản\ lý\ sản\ phẩm.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.shop a span {
+    background-image: url('../icons/quản\ lý\ shop.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.category a span {
+    background-image: url('../icons/Quản\ lý\ danh\ mục.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.delivery a span {
+    background-image: url('../icons/Quản\ lý\ vận\ chuyển.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.nav li.web a span {
+    background-image: url('../icons/quản\ lý\ web\ icon.png');
+    background-size: 16px 16px;
+    padding-top: 12px;
+}
+
+.categories_li.active {
+    display: block
+}
+
+.categories_li ul.sub {
+    display:none !important
+}
+
+.categories_li.active ul.sub {
+    display:block !important
+}
+
+ul.sub li a.active {
+    color: #f00;
+}
+
+ul.pagination li.active {
+    background: #6fbffb;
+    color: #fff;
+    padding: 4.5px 8px;
+    border-radius: 2px;
+}
+.nav-pagination {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+a.w3-bar-item.w3-button {
+    font-size: 15px;
+    color: #666;
+    font-weight: bold;
+    padding: 5px 30px;
+}
+
+
+a.w3-bar-item.w3-button.active {
+    background: transparent;
+    height: 5px;
+    width: 10px;
+    box-shadow: 0 3px 0 0 #6fbffb;
+    font-family: sans-serif;
+}
+
+a.w3-bar-item.w3-button:hover {
+    background: transparent;
+    height: 5px;
+    width: 10px;
+    box-shadow: 0 3px 0 0 #6fbffb;
+    font-family: sans-serif;
+}
+
+.w3-bar.w3-black {
+    padding: 10px 20px;
+}

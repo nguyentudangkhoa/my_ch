@@ -1,0 +1,28 @@
+.fileuploader-theme-dragdrop .fileuploader-input{
+	position: relative;
+	display: block;
+    border-radius: 0px;
+    text-align: center;
+    border: 1px dashed #1e98f9;
+    height: 100px;
+    width: calc(16.6% - 10px);
+    min-width: 145px;
+    margin: 5px;
+}
+.fileuploader-theme-dragdrop .fileuploader-input span{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    color: #1e98f9;
+    font-size: 30px;
+
+}
+.fileuploader-theme-dragdrop .fileuploader-input .fileuploader-main-icon{display:block;font-size:56px;margin:0 auto;margin-bottom:26px;-webkit-transition:all 0.2s ease;transition:all 0.2s ease;}
+.fileuploader-theme-dragdrop .fileuploader-input h3{margin:0;margin-bottom:8px;padding:0;background:none;border:none;font-size:18px;font-weight:bold;color:#5B5B7B;white-space:normal;box-shadow:none;}
+.fileuploader-theme-dragdrop .fileuploader-input p{margin:0;padding:0;color:#90a0bc;margin-bottom:12px;}
+.fileuploader-theme-dragdrop .fileuploader-input .fileuploader-input-inner,.fileuploader-theme-dragdrop .fileuploader-input.fileuploader-dragging .fileuploader-main-icon{-webkit-transition:all 0.2s ease;transition:all 0.2s ease;}
+.fileuploader-theme-dragdrop .fileuploader-input.fileuploader-dragging .fileuploader-input-inner{opacity:0.6;}
+.fileuploader-theme-dragdrop .fileuploader-input.fileuploader-dragging .fileuploader-main-icon{-webkit-transform:translateY(18px);transform:translateY(18px);}
+.fileuploader-theme-dragdrop .fileuploader-input.fileuploader-dragging .fileuploader-input-button{-webkit-transform:none;transform:none;opacity:1;}
