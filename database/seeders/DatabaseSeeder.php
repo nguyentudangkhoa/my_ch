@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            ProvineSeeder::class,
+            DistrictSeeder::class,
+            WardSeeder::class,
             CategorySeeder::class,
             ChildCategoryLevelTwoSeeder::class,
             ProductItemSeeder::class,
@@ -21,7 +24,9 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             UserSeeder::class,
             PaymentMethodSeeder::class,
+            MemberSeeder::class,
             OrderSeeder::class,
+            OrderDetailSeeder::class,
         ]);
     }
 }

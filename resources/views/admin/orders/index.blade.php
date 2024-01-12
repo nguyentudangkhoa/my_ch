@@ -28,7 +28,7 @@
                     <tbody style="background-color: #fff">
                         @foreach ($order->orderDetails as $orderDetail)
                             <tr>
-                                <td>{{ $orderDetail->product->product_thumb }}</td>
+                                <td><img src="{{ $orderDetail->product->product_thumb ?? '' }}" alt=""></td>
                                 <td>{{ $orderDetail->quantity }} </td>
                                 <td>{{ number_format($orderDetail->payment_price * $orderDetail->quantity) }}</td>
                                 <td>{{ $order->ship_name }}</td>

@@ -15,6 +15,10 @@ class CreateWardsTable extends Migration
     {
         Schema::create('wards', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('district_id');
+            $table->string('slug');
+            $table->integer('display')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

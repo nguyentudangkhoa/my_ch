@@ -48,7 +48,7 @@ class CreateMembersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('my_wallet')->references('id')->on('wallets');
+//            $table->foreign('my_wallet')->references('id')->on('wallets');
         });
     }
 

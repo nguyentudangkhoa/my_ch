@@ -26,8 +26,8 @@ class CreateOrderDetailsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+//            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+//            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 

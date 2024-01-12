@@ -63,11 +63,11 @@ class CreateOrdersTable extends Migration
             $table->softDeletes();
 
             $table->foreign('payment_method_id')->references('id')->on('payment_methods');
-            $table->foreign('shop_id')->references('id')->on('shops');
-            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('shop_id')->references('id')->on('shops');
+//            $table->foreign('user_id')->references('id')->on('members');
             $table->foreign('province_id')->references('id')->on('provinces');
             $table->foreign('district_id')->references('id')->on('districts');
-            $table->foreign('ward_id')->references('id')->on('wards');
+//            $table->foreign('ward_id')->references('id')->on('wards');
         });
     }
 

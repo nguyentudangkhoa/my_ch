@@ -62,7 +62,8 @@ class OrderSeeder extends Seeder
                     'refund_date' => date('Y-m-d', (int) ($item->ngayhoantien ?: 0)),
                     'cancel_note' => $item->ghichuhuydon,
                     'cancel_status' => $item->trangthaihuydon,
-                    'created_at' => now(),
+                    'created_at' => date('Y-m-d H:i:s', (int) ($item->ngaytao ?: 0)),
+                    'updated_at' => now(),
                 ]);
             }
         });
