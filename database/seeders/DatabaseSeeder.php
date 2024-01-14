@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             MemberSeeder::class,
             OrderSeeder::class,
             OrderDetailSeeder::class,
+            WithdrawMoneySeeder::class,
         ]);
     }
 }

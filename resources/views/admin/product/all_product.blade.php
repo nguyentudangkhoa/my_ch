@@ -30,8 +30,9 @@
                             <td>{{ $product->shop->shop_title }}</td>
                             <td>{{ $product->updated_at }}</td>
                             <td style="text-align: center;">
+                                @csrf
                                 <label class="toggle-table">
-                                    <input type="checkbox" @if ($product->ggsp != 0) checked @endif>
+                                    <input type="checkbox" class="gg-product" name="gg_product" data-product="{{ $product->id }}" @if ($product->ggsp != 0) checked @endif>
                                     <span class="slider"></span>
                                 </label>
                             </td>
@@ -44,3 +45,26 @@
     </div>
     {{ $products->links('admin.app.partials.pagination.default') }}
 @endsection
+
+@push('foot_html')
+    <script>
+        $(document).ready(function () {
+            $('.gg-product').on('change', async function () {
+                await $.ajax({
+                    url: "{{ route('admin.product.toggle_ggsp') }}",
+                    method: 'PUT',
+                    data: {
+                        id: parseInt($(this).data('product')),
+                        _token: @json(csrf_token())
+                    },
+                    success: function(res) {
+                        //
+                    },
+                    error: function(error) {
+                        //
+                    }
+                })
+            })
+        })
+    </script>
+@endpush

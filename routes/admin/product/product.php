@@ -8,4 +8,5 @@ Route::middleware('is_login')->prefix('product')->name('product.')->group(functi
     Route::get('/all-product', [ProductController::class, 'getProduct'])->name('all_product');
     Route::get('/violation-product', [ProductController::class, 'getIllegalProduct'])->name('violation_product');
     Route::get('/gg-product', [ProductController::class, 'getGGProduct'])->name('gg_product');
+    Route::put('toggle-ggsp', [ProductController::class, 'toggleProductGg'])->name('toggle_ggsp');
 });

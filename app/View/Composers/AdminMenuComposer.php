@@ -32,7 +32,7 @@ class AdminMenuComposer
                 'name' => __('Quản lý đơn hàng'),
                 'url' => null,
                 'icon' => 'order',
-                'is_active' => Route::is('admin.order.index') || Route::is('admin.order.outsea_order'),
+                'is_active' => Route::is('admin.order.index') || Route::is('admin.order.outsea_order') || Route::is('admin.order.complain_return_order'),
                 'children' => [
                     [
                         'name' => __('Đơn hàng trong nước'),
@@ -48,9 +48,9 @@ class AdminMenuComposer
                     ],
                     [
                         'name' => __('Kiếu nại/Hoàn tiền'),
-                        'url' => null,
+                        'url' => route('admin.order.complain_return_order'),
                         'icon' => null,
-                        'is_active' => false,
+                        'is_active' => Route::is('admin.order.complain_return_order'),
                     ],
                 ],
             ],
@@ -58,25 +58,25 @@ class AdminMenuComposer
                 'name' => __('Quản lý tài chính'),
                 'url' => null,
                 'icon' => 'financial',
-                'is_active' => false,
+                'is_active' => Route::is('admin.finance.internal_shop') || Route::is('admin.finance.outsea_order') || Route::is('admin.finance.withdraw_money'),
                 'children' => [
                     [
                         'name' => __('Shop trong nước'),
-                        'url' => route('admin.shop.internal_shop'),
+                        'url' => route('admin.finance.internal_shop'),
                         'icon' => null,
-                        'is_active' => false,
+                        'is_active' => Route::is('admin.finance.internal_shop'),
                     ],
                     [
                         'name' => __('Shop nước ngoài'),
-                        'url' => null,
+                        'url' => route('admin.finance.outsea_order'),
                         'icon' => null,
-                        'is_active' => false,
+                        'is_active' => Route::is('admin.finance.outsea_order'),
                     ],
                     [
                         'name' => __('Lịch sử rút tiền'),
-                        'url' => null,
+                        'url' => route('admin.finance.withdraw_money'),
                         'icon' => null,
-                        'is_active' => false,
+                        'is_active' => Route::is('admin.finance.withdraw_money'),
                     ],
                     [
                         'name' => __('Phí giao dịch/rút tiền'),

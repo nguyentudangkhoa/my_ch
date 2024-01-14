@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Actions\Admin\Shop\GetShop;
+use App\Actions\Shop\GetShopAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Shop\GetNewShopRequest;
 use Illuminate\Http\Request;
@@ -13,11 +13,11 @@ class ShopController extends Controller
      * Get new shop
      *
      * @param \App\Http\Requests\Admin\Shop\GetNewShopRequest $request
-     * @param \App\Actions\Admin\Shop\GetShop $shop
+     * @param \App\Actions\Shop\GetShopAction $shop
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function getNewShop(GetNewShopRequest $request, GetShop $shop)
+    public function getNewShop(GetNewShopRequest $request, GetShopAction $shop)
     {
         $data = array_merge($request->validated(), [
             'paginate' => 10,
@@ -33,11 +33,11 @@ class ShopController extends Controller
      * Get close shop
      *
      * @param \App\Http\Requests\Admin\Shop\GetNewShopRequest $request
-     * @param \App\Actions\Admin\Shop\GetShop $shop
+     * @param \App\Actions\Shop\GetShopAction $shop
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function getCloseShop(GetNewShopRequest $request, GetShop $shop)
+    public function getCloseShop(GetNewShopRequest $request, GetShopAction $shop)
     {
         $data = array_merge($request->validated(), [
             'paginate' => 10,
@@ -51,10 +51,10 @@ class ShopController extends Controller
 
     /**
      * @param \App\Http\Requests\Admin\Shop\GetNewShopRequest $request
-     * @param \App\Actions\Admin\Shop\GetShop $shop
+     * @param \App\Actions\Shop\GetShopAction $shop
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function getInternalShop(GetNewShopRequest $request, GetShop $shop)
+    public function getInternalShop(GetNewShopRequest $request, GetShopAction $shop)
     {
         $data = array_merge($request->validated(), [
             'paginate' => 10,
@@ -68,10 +68,10 @@ class ShopController extends Controller
 
     /**
      * @param \App\Http\Requests\Admin\Shop\GetNewShopRequest $request
-     * @param \App\Actions\Admin\Shop\GetShop $shop
+     * @param \App\Actions\Shop\GetShopAction $shop
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function getOutSeaShop(GetNewShopRequest $request, GetShop $shop)
+    public function getOutSeaShop(GetNewShopRequest $request, GetShopAction $shop)
     {
         $data = array_merge($request->validated(), [
             'paginate' => 10,

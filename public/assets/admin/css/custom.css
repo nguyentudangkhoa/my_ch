@@ -94,9 +94,9 @@ input:checked+.slider:before {
     height: 100%;
 }
 
-.responsive-table thead tr {
-    background-color:#919191 !important;
-    color: white;
+.responsive-table thead {
+    background-color: #e5e5e5 !important;
+    color: #878787;
 }
 
 ul.sub li a {
@@ -215,4 +215,53 @@ a.w3-bar-item.w3-button:hover {
 
 .w3-bar.w3-black {
     padding: 10px 20px;
+}
+
+.image-circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.d-flex {
+    display: flex !important;
+    gap: 10px;
+    justify-content: left;
+    flex-flow: unset;
+}
+
+table tr th {
+    vertical-align: middle;
+}
+
+.timkiem select , .timkiem input[name='keyword']{
+    font-size: 12px;
+    padding: 10px 6px;
+    background: white;
+    border: 1px solid #DDD;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #656565;
+    float: left;
+    width: 200px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.count-text {
+    font-weight: 100;
+    color: #ff000096;
+    margin-left: unset;
+}
+
+.sTable tbody td .product img {
+    margin-right: unset;
+}
+
+.sTable{
+    border-collapse:collapse;
+}
+
+.sTable tr:after{
+    border-bottom:1px solid #e5e5e5;
 }

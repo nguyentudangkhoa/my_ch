@@ -2,44 +2,66 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Order\GetOrderAction;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function index(Request $request)
+    const PAGINATION = 10;
+    const SHOP_OUT_SEA = 2;
+    const SHOP_INTERNAL = 1;
+
+    /**
+     * Index
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Actions\Order\GetOrderAction $getOrder
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index(Request $request, GetOrderAction $getOrder)
     {
-        $orders = Order::with(['orderDetails.product', 'shop', 'user'])->whereHas('shop', function ($query) {
-            $query->where('shop_type', 1);
-        });
+        $request->merge([
+            'pagination' => self::PAGINATION,
+            'shop_type' => self::SHOP_INTERNAL,
+        ]);
 
-        if (request()->has('status') && $status = request()->query('status')) {
-            $orders->where('status', $status);
-        }
-
-        if ($request->has('order_code')) {
-            $orders->where('order_code', $request->query('order_code'));
-        }
-
-        return view('admin.orders.index', ['orders' => $orders->paginate(10)]);
+        return view('admin.orders.index', $getOrder());
     }
 
-    public function outSeaOrder(Request $request)
+    /**
+     * Out Sea Order
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Actions\Order\GetOrderAction $getOrder
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function outSeaOrder(Request $request, GetOrderAction $getOrder)
     {
-        $orders = Order::with(['orderDetails.product', 'shop', 'user'])->whereHas('shop', function ($query) {
-            $query->where('shop_type', 2);
-        });
+        $request->merge([
+            'pagination' => self::PAGINATION,
+            'shop_type' => self::SHOP_OUT_SEA,
+        ]);
 
-        if (request()->has('status') && $status = request()->query('status')) {
-            $orders->where('status', $status);
-        }
+        return view('admin.orders.outseas_order', $getOrder());
+    }
 
+    /**
+     * Complain
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Actions\Order\GetOrderAction $getOrder
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View\
+     */
+    public function complainOrReturnOrder(Request $request, GetOrderAction $getOrder)
+    {
+        $request->merge([
+            'pagination' => self::PAGINATION,
+            'return_order' => true,
+            'is_complain' => true,
+        ]);
 
-        if ($request->has('order_code')) {
-            $orders->where('order_code', $request->query('order_code'));
-        }
-
-        return view('admin.orders.index', ['orders' => $orders->paginate(10)]);
+        return view('admin.orders.complain_return_order', $getOrder());
     }
 }

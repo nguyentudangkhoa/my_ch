@@ -2,32 +2,31 @@
 
 @section('content')
     <div class="count-product">
-        <a class="c-pro-all">Tổng doanh thu ngoài nước</a>
+        <a class="c-pro-all">Tổng doanh thu nước ngoài</a>
     </div>
-    <div class="responsive-table">
-        <table cellpadding="0" cellspacing="0" width="100%" class="table-order-title sTable withCheck mTable" id="checkAll">
-            <thead>
-            <tr style="background-color: #e5e5e5">
-                <th >Doanh thu năm</th>
-                <th >Doanh thu tháng</th>
-                <th >Doanh thu tuần</th>
-                <th >Phí vận chuyển</th>
-                <th >Phí giao dịch</th>
-            </tr>
-            </thead>
-            <tbody style="background-color: #fff">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td >0
-                    </td>
+    <div class="widget">
+        <div class="responsive-table">
+            <table cellpadding="0" cellspacing="0" width="100%" class="table-order-title sTable withCheck mTable" id="checkAll">
+                <thead>
+                <tr style="background-color: #e5e5e5">
+                    <th >Doanh thu năm</th>
+                    <th >Doanh thu tháng</th>
+                    <th >Doanh thu tuần</th>
+                    <th >Phí vận chuyển</th>
+                    <th >Phí giao dịch</th>
                 </tr>
-            </tbody>
-        </table>
+                </thead>
+                <tbody style="background-color: #fff;text-align: center">
+                <tr>
+                    @foreach($financeSums as $financeSum)
+                        <td>{{ number_format($financeSum) }}</td>
+                    @endforeach
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-{{--    @include('admin.product.partials.search-box', ['action' => route('admin.product.index'), 'categories' => $categories])--}}
+    {{--    @include('admin.product.partials.search-box', ['action' => route('admin.product.index'), 'categories' => $categories])--}}
     <div class="widget">
         <div class="responsive-table">
             <table cellpadding="0" cellspacing="0" width="100%" class="table-order-title sTable withCheck mTable" id="checkAll">

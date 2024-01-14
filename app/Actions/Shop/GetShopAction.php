@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions\Admin\Shop;
+namespace App\Actions\Shop;
 
 use App\Models\Shop;
 use Illuminate\Support\Arr;
 
-class GetShop
+class GetShopAction
 {
     public function __invoke(array $request = [])
     {

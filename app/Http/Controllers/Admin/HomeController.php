@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Actions\Admin\Shop\GetShop;
+use App\Actions\Shop\GetShopAction;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class HomeController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(GetShop $getShop)
+    public function index(GetShopAction $getShop)
     {
         $shops = $getShop([
             'paginate' => 10,

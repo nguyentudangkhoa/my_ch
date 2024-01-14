@@ -8,4 +8,5 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     include('shop/shop.php');
     include('product/product.php');
     include('order/order.php');
+    include('finance/finance.php');
 });
